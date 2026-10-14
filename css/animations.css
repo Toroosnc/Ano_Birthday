@@ -1,0 +1,165 @@
+/* Animations Module - Premium Japanese Theme Birthday Website for Ano */
+
+/* Sakura Petal Canvas Animation */
+.sakura-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Floating Sakura Particles */
+.floating-sakura {
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    color: var(--sakura-pink);
+    filter: drop-shadow(0 2px 4px rgba(255, 183, 197, 0.5));
+    animation: fall-blossom linear infinite;
+}
+
+@keyframes fall-blossom {
+    0% {
+        transform: translateY(-10%) rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg) translateX(calc(100vw * 0.8));
+        opacity: 0;
+    }
+}
+
+/* Typewriter Keyframe */
+@keyframes typewriter-from-start {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Blink Caret */
+@keyframes blink-caret-from-start {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--gold-accent); }
+}
+
+/* Button Hover Pulse */
+@keyframes button-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+.btn:active {
+    animation: button-pulse 0.2s ease;
+}
+
+/• Card Lift Animation */
+@keyframes card-lift {
+    from { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+    to { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); }
+}
+
+.origami-letter:hover,
+.ema-card:hover {
+    animation: card-lift 0.3s ease;
+}
+
+/* Polaroid Hover Zoom */
+@keyframes polaroid-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
+}
+
+.polaroid:hover {
+    animation: polaroid-zoom 0.3s ease;
+}
+
+/* Confetti Burst */
+@keyframes confetti-burst {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.confetti-piece {
+    position: fixed;
+    pointer-events: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    animation: confetti-burst linear infinite;
+}
+
+/* Music Toggle Pulse */
+@keyframes music-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+#music-toggle.active {
+    animation: music-pulse 2s ease-in-out infinite;
+}
+
+/* Sakura Drift Animation */
+@keyframes sakura-drift {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(40px, 40px) rotate(360deg); }
+}
+
+.sakura-floating {
+    animation: sakura-drift 20s linear infinite;
+}
+
+/* Wish Confetti */
+@keyframes wish-confetti {
+    0% { transform: translateY(-30px) scale(1); opacity: 1; }
+    100% { transform: translateY(800px) scale(0.5); opacity: 0; }
+}
+
+.wish-confetti {
+    position: fixed;
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    background: var(--sakura-pink);
+    border-radius: 50%;
+    animation: wish-confetti 2s ease-out infinite;
+    z-index: 999;
+}
+
+/* Section Entrance Fade */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section,
+.hero > * {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.section { animation-delay: 0.1s; }
+.hero > * { animation-delay: 0.2s; }
+
+/* Stagger Children */
+.stagger-children > * {
+    animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }

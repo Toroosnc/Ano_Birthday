@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Otanjoubi Omedetou, Ano!</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a id="nav-home" href="#hero">Home</a>
+        <a id="nav-puzzle" href="#puzzle">Puzzle</a>
+        <a id="nav-cat-game" href="#cat-game">Cat game</a>
+        <a id="nav-omikuji" href="#omikuji">Omikuji</a>
+        <a id="nav-riddles" href="#riddles">Riddles</a>
+        <a id="nav-gallery" href="#gallery">Gallery</a>
+        <div class="site-language" role="group" aria-label="Page language">
+            <button id="language-en" type="button" aria-pressed="true">EN</button>
+            <button id="language-ja" type="button" lang="ja" aria-pressed="false">日本語</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Sakura Background -->
+    <section id="hero" class="hero">
+        <h1 id="hero-title" class="happy-birthday">Otanjoubi Omedetou, Ano!</h1>
+        <p class="birthday-date" id="birthday-date">October 27</p>
+
+        <p id="hero-typewriter" class="typewriter"></p>
+
+        <p id="hero-copy" class="subheading">
+            I made this little birthday corner just for you, Ano. Hope your day is full of your favorite things.
+        </p>
+
+        <div class="cta-buttons">
+            <a id="hero-puzzle-link" class="btn btn-primary" href="#puzzle">Solve the puzzle</a>
+            <a id="hero-gallery-link" class="btn btn-gold" href="#gallery">See the gallery</a>
+        </div>
+    </section>
+
+    <!-- Puzzle Section -->
+    <section id="puzzle" class="puzzle-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="puzzle-title">A little puzzle for Ano</h2>
+                <p id="puzzle-intro">Choose a photo and put the pieces back together.</p>
+            </div>
+
+            <div id="puzzle-container">
+                <!-- Puzzle JS will inject upload area and canvas -->
+            </div>
+        </div>
+    </section>
+
+    <section id="cat-game" class="cat-game-section" aria-labelledby="cat-game-title">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="cat-game-title">Snack catcher</h2>
+                <p id="cat-game-intro">Help the kitty catch falling treats. Move with the arrow keys or drag on the screen.</p>
+            </div>
+
+            <div class="cat-game-shell">
+                <div class="cat-game-hud" aria-live="polite">
+                    <p><span id="cat-score-label">Treats</span><strong id="cat-score">0</strong></p>
+                    <p><span id="cat-misses-label">Missed</span><strong id="cat-misses">0 / 3</strong></p>
+                </div>
+                <canvas id="cat-game-canvas" width="720" height="360" tabindex="0" aria-label="Cat snack-catching game"></canvas>
+                <div class="cat-game-controls">
+                    <p id="cat-game-status" aria-live="polite">Ready when you are!</p>
+                    <button class="btn btn-primary" id="cat-game-start" type="button">Play</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Omikuji Section -->
+    <section id="omikuji" class="omikuji-box">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="omikuji-title">A little omikuji for Ano</h2>
+                <p id="omikuji-intro">One small fortune for the year ahead.</p>
+            </div>
+
+            <div id="omikuji-container">
+                <!-- Omikuji JS will inject the drawer -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Riddle Section -->
+    <section id="riddles" class="riddle-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="riddle-title">A little wordplay for Ano</h2>
+                <p id="riddle-intro">Pick a language, reveal a punchline, and go again.</p>
+            </div>
+
+            <div class="riddle-card">
+                <p class="riddle-count" id="riddle-count" aria-live="polite">Riddle 1</p>
+                <h3 class="riddle-question" id="riddle-question" aria-live="polite"></h3>
+                <div class="riddle-answer" id="riddle-answer" aria-live="polite" hidden>
+                    <p class="riddle-punchline" id="riddle-punchline"></p>
+                    <p class="riddle-note" id="riddle-note"></p>
+                </div>
+                <div class="riddle-actions">
+                    <button class="btn btn-primary" id="reveal-riddle" type="button">Reveal answer</button>
+                    <button class="btn btn-gold" id="next-riddle" type="button">Another one</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Polaroid Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="gallery-title">Ano's gallery</h2>
+                <p id="gallery-intro">A few little moments worth keeping.</p>
+            </div>
+
+            <figure class="polaroid polaroid--landscape">
+                <img id="gallery-image-1" src="1.jpeg" alt="Two cloaked figures beside a glowing candle in a warm, sunlit forest">
+                <figcaption id="gallery-caption-1">A quiet moment in the clouds</figcaption>
+            </figure>
+            <figure class="polaroid polaroid--landscape">
+                <img id="gallery-image-2" src="2.jpeg" alt="A cloaked figure standing in a flowered field beneath a blue sky">
+                <figcaption id="gallery-caption-2">A sky full of little lights</figcaption>
+            </figure>
+            <figure class="polaroid">
+                <img id="gallery-image-3" src="3.jpeg" alt="A tiny orange kitten resting on a cat tree">
+                <figcaption id="gallery-caption-3">I miss your cat :D</figcaption>
+            </figure>
+            <figure class="polaroid">
+                <img id="gallery-image-4" src="4.jpeg" alt="Freshly baked pale green meringue cookies on a tray">
+                <figcaption id="gallery-caption-4">I want to try the cookies you made.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="birthday-note" class="birthday-note" aria-labelledby="birthday-note-title">
+        <div class="birthday-note-copy">
+            <span class="birthday-note-kicker" id="birthday-note-kicker">One last thing</span>
+            <h2 id="birthday-note-title">I love you, Ano.</h2>
+            <p id="birthday-note-message">Happy birthday! I hope you stay healthy and find success in everything ahead.</p>
+            <p class="birthday-promise" id="birthday-promise">We promised we'd watch the summer fireworks in Japan together. I don't know exactly when, but I'll keep doing my best so we can be there side by side.</p>
+        </div>
+
+        <svg class="rose-illustration" viewBox="0 0 240 300" role="img" aria-labelledby="rose-title rose-description">
+            <title id="rose-title">A rose blooming for Ano</title>
+            <desc id="rose-description">A pink rose slowly opens above two green leaves.</desc>
+            <path class="rose-stem" d="M120 132 C119 175 124 218 120 276" />
+            <path class="rose-leaf rose-leaf--left" d="M119 205 C84 173 57 190 85 211 C100 220 113 215 119 205Z" />
+            <path class="rose-leaf rose-leaf--right" d="M121 235 C152 201 181 213 158 236 C145 247 130 244 121 235Z" />
+            <g class="rose-bloom">
+                <g class="rose-layer rose-layer--outer">
+                    <path d="M120 63 C137 56 153 69 150 84 C165 94 162 114 146 121 C140 139 118 143 107 130 C88 137 72 122 81 105 C70 89 82 70 100 72 C105 62 114 59 120 63Z" />
+                </g>
+                <g class="rose-layer rose-layer--middle">
+                    <path d="M119 76 C134 69 146 81 139 94 C151 103 143 118 130 117 C121 130 105 123 106 110 C93 102 100 86 113 89 C120 81 132 87 128 98 C138 105 130 114 122 109 C116 106 118 98 124 96 C128 92 123 85 117 88 C108 88 105 97 112 103 C101 106 98 97 103 89 C107 82 112 78 119 76Z" />
+                </g>
+                <g class="rose-layer rose-layer--inner">
+                    <path d="M119 89 C130 83 138 92 132 101 C141 109 132 119 123 113 C115 120 105 112 111 104 C105 96 112 88 119 93 C126 89 131 96 126 102 C133 108 125 113 120 108 C115 105 119 99 123 98 C125 94 120 91 117 95 C112 97 113 103 117 105 C110 108 107 101 111 95 C113 92 116 90 119 89Z" />
+                    <path class="rose-heart" d="M120 96 C128 94 130 102 124 106 C122 111 115 108 117 103 C114 99 117 96 120 96Z" />
+                </g>
+            </g>
+        </svg>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p id="footer-note">Made just for You 🌸</p>
+        <p id="footer-greeting">Otanjoubi omedetou!</p>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="js/main.js"></script>
+    <script src="js/sakura.js"></script>
+    <script src="js/puzzle.js"></script>
+    <script src="js/cat-game.js"></script>
+    <script src="js/omikuji.js"></script>
+    <script src="js/riddles.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>
